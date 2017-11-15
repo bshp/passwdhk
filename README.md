@@ -1,4 +1,7 @@
 # Password Filter for Active Directory
+
+This is a generic password filter for Active Directory that will run the program you specify before and/or after a password change is made. It can be a web service call, script call, or even update a sql database.   
+
 This repo was updated from VS 2008 to VS 2010. The release dll has been built and tested for Windows Server x64 only. See the Original-README for more info, the below is for x64.
 
 Requirements
