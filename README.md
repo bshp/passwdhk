@@ -1,6 +1,11 @@
 # Password Filter for Active Directory
 This repo was updated from VS 2008 to VS 2010. The release dll has been built and tested for Windows Server x64 only. See the Original-README for more info, the below is for x64.
 
+Requirements
+============
+Server 2008 R2 +
+Microsoft Visual C++ 2010 Redistributable Package (x64)
+
 Installation
 ========
 (a) Copy "passwdhk.dll" to C:\Windows\system32
