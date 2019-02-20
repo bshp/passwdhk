@@ -116,6 +116,5 @@ namespace passwdhk
         {
             this.Close();
         }
-
     }
 }

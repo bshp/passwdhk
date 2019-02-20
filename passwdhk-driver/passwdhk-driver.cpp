@@ -116,7 +116,8 @@ int wmain(int argc, wchar_t* argv[])
 	}
 	
 	wprintf(L"Attempting to load \"%s\"\n", dll_filename);
-	hDLL = LoadLibrary(dll_filename);
+	hDLL = LoadLibraryW(dll_filename);
+
 	if (hDLL != NULL) {
 		PasswordChangeNotify = (PASSWORDCHANGENOTIFYTYPE)GetProcAddress(hDLL, "PasswordChangeNotify");
 		if (!PasswordChangeNotify) {

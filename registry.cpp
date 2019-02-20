@@ -101,6 +101,10 @@ pshkConfigStruct pshk_read_registry(void)
 		ret.preChangeProgWait = wcstol(szBuf, NULL, 10);
 	else
 		ret.valid = 0;
+	if (read_registry_value(hk, L"preChangeProgSkipComp", (LPBYTE)szBuf, &szBufSize))
+		ret.preChangeProgSkipComp = string_to_bool(szBuf);
+	else
+		ret.valid = 0;
 	if (read_registry_value(hk, L"postChangeProg", (LPBYTE)szBuf, &szBufSize))
 		ret.postChangeProg = _wcsdup(szBuf);
 	else
@@ -111,6 +115,10 @@ pshkConfigStruct pshk_read_registry(void)
 		ret.valid = 0;
 	if (read_registry_value(hk, L"postChangeProgWait", (LPBYTE)szBuf, &szBufSize))
 		ret.postChangeProgWait = wcstol(szBuf, NULL, 10);
+	else
+		ret.valid = 0;
+	if (read_registry_value(hk, L"postChangeProgSkipComp", (LPBYTE)szBuf, &szBufSize))
+		ret.postChangeProgSkipComp = string_to_bool(szBuf);
 	else
 		ret.valid = 0;
 	if (read_registry_value(hk, L"logfile", (LPBYTE)szBuf, &szBufSize))
@@ -133,6 +141,7 @@ pshkConfigStruct pshk_read_registry(void)
 		ret.doublequote = string_to_bool(szBuf);
 	else
 		ret.valid = 0;
+
 	if (read_registry_value(hk, L"environment", (LPBYTE)szBuf, &szBufSize)) {
 		ret.environmentStr = _wcsdup(szBuf);
 		ret.environment = parse_env(szBuf);

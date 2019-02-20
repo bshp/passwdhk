@@ -68,8 +68,10 @@ typedef struct
 	DWORD maxLogSize;
 	wchar_t *postChangeProg;
 	wchar_t *postChangeProgArgs;
+	BOOL postChangeProgSkipComp;
 	wchar_t *preChangeProg;
 	wchar_t *preChangeProgArgs;
+	BOOL preChangeProgSkipComp;
 	wchar_t *logFile;
 	wchar_t *workingDir;
 	wchar_t *environment;

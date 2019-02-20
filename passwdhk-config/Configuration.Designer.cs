@@ -35,12 +35,14 @@ namespace passwdhk
             this.prechange_program_t = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.preChangeSkipComp = new System.Windows.Forms.CheckBox();
             this.prechange_prog_button = new System.Windows.Forms.Button();
             this.prechange_waittime_n = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.prechange_arguments_t = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.postChangeSkipComp = new System.Windows.Forms.CheckBox();
             this.postchange_prog_button = new System.Windows.Forms.Button();
             this.postchange_waittime_n = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
@@ -66,7 +68,7 @@ namespace passwdhk
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.redirect_output_c = new System.Windows.Forms.CheckBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.Project_link = new System.Windows.Forms.LinkLabel();
             this.workdir_button = new System.Windows.Forms.Button();
             this.enable_passwdhk_c = new System.Windows.Forms.CheckBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -84,53 +86,59 @@ namespace passwdhk
             // 
             // apply_button
             // 
-            this.apply_button.Location = new System.Drawing.Point(12, 448);
+            this.apply_button.Location = new System.Drawing.Point(32, 1068);
+            this.apply_button.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.apply_button.Name = "apply_button";
-            this.apply_button.Size = new System.Drawing.Size(75, 23);
+            this.apply_button.Size = new System.Drawing.Size(200, 55);
             this.apply_button.TabIndex = 0;
             this.apply_button.Text = "Apply";
             this.apply_button.UseVisualStyleBackColor = true;
-            this.apply_button.Click += new System.EventHandler(this.apply_button_Click);
+            this.apply_button.Click += new System.EventHandler(this.Apply_Button_Click);
             // 
             // exit_button
             // 
             this.exit_button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.exit_button.Location = new System.Drawing.Point(597, 448);
+            this.exit_button.Location = new System.Drawing.Point(1592, 1068);
+            this.exit_button.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.exit_button.Name = "exit_button";
-            this.exit_button.Size = new System.Drawing.Size(75, 23);
-            this.exit_button.TabIndex = 2;
+            this.exit_button.Size = new System.Drawing.Size(200, 55);
+            this.exit_button.TabIndex = 3;
             this.exit_button.Text = "Exit";
             this.exit_button.UseVisualStyleBackColor = true;
-            this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
+            this.exit_button.Click += new System.EventHandler(this.Exit_Button_Click);
             // 
             // about_button
             // 
-            this.about_button.Location = new System.Drawing.Point(516, 448);
+            this.about_button.Location = new System.Drawing.Point(1376, 1068);
+            this.about_button.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.about_button.Name = "about_button";
-            this.about_button.Size = new System.Drawing.Size(75, 23);
-            this.about_button.TabIndex = 1;
+            this.about_button.Size = new System.Drawing.Size(200, 55);
+            this.about_button.TabIndex = 2;
             this.about_button.Text = "About";
             this.about_button.UseVisualStyleBackColor = true;
-            this.about_button.Click += new System.EventHandler(this.about_button_Click);
+            this.about_button.Click += new System.EventHandler(this.About_Button_Click);
             // 
             // prechange_program_t
             // 
-            this.prechange_program_t.Location = new System.Drawing.Point(72, 13);
+            this.prechange_program_t.Location = new System.Drawing.Point(192, 31);
+            this.prechange_program_t.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.prechange_program_t.Name = "prechange_program_t";
-            this.prechange_program_t.Size = new System.Drawing.Size(501, 20);
+            this.prechange_program_t.Size = new System.Drawing.Size(1329, 38);
             this.prechange_program_t.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Location = new System.Drawing.Point(16, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(131, 32);
             this.label1.TabIndex = 4;
             this.label1.Text = "Program:";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.preChangeSkipComp);
             this.groupBox1.Controls.Add(this.prechange_prog_button);
             this.groupBox1.Controls.Add(this.prechange_waittime_n);
             this.groupBox1.Controls.Add(this.label3);
@@ -138,33 +146,47 @@ namespace passwdhk
             this.groupBox1.Controls.Add(this.prechange_arguments_t);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.prechange_program_t);
-            this.groupBox1.Location = new System.Drawing.Point(12, 25);
+            this.groupBox1.Location = new System.Drawing.Point(32, 60);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(660, 94);
-            this.groupBox1.TabIndex = 4;
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.groupBox1.Size = new System.Drawing.Size(1760, 224);
+            this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pre-change";
             // 
+            // preChangeSkipComp
+            // 
+            this.preChangeSkipComp.AutoSize = true;
+            this.preChangeSkipComp.Location = new System.Drawing.Point(549, 162);
+            this.preChangeSkipComp.Name = "preChangeSkipComp";
+            this.preChangeSkipComp.Size = new System.Drawing.Size(364, 36);
+            this.preChangeSkipComp.TabIndex = 9;
+            this.preChangeSkipComp.Text = "Skip Computer Accounts";
+            this.preChangeSkipComp.UseVisualStyleBackColor = true;
+            // 
             // prechange_prog_button
             // 
-            this.prechange_prog_button.Location = new System.Drawing.Point(579, 10);
+            this.prechange_prog_button.Location = new System.Drawing.Point(1544, 24);
+            this.prechange_prog_button.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.prechange_prog_button.Name = "prechange_prog_button";
-            this.prechange_prog_button.Size = new System.Drawing.Size(75, 23);
+            this.prechange_prog_button.Size = new System.Drawing.Size(200, 55);
             this.prechange_prog_button.TabIndex = 1;
             this.prechange_prog_button.Text = "Browse...";
             this.prechange_prog_button.UseVisualStyleBackColor = true;
-            this.prechange_prog_button.Click += new System.EventHandler(this.button4_Click);
+            this.prechange_prog_button.Click += new System.EventHandler(this.Prechange_Browse_Click);
             // 
             // prechange_waittime_n
             // 
-            this.prechange_waittime_n.Location = new System.Drawing.Point(92, 66);
+            this.prechange_waittime_n.Location = new System.Drawing.Point(245, 157);
+            this.prechange_waittime_n.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.prechange_waittime_n.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
             this.prechange_waittime_n.Name = "prechange_waittime_n";
-            this.prechange_waittime_n.Size = new System.Drawing.Size(86, 20);
+            this.prechange_waittime_n.Size = new System.Drawing.Size(229, 38);
             this.prechange_waittime_n.TabIndex = 3;
             this.prechange_waittime_n.Value = new decimal(new int[] {
             5000,
@@ -175,30 +197,34 @@ namespace passwdhk
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 68);
+            this.label3.Location = new System.Drawing.Point(16, 162);
+            this.label3.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 13);
+            this.label3.Size = new System.Drawing.Size(212, 32);
             this.label3.TabIndex = 8;
             this.label3.Text = "Wait Time (ms):";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 41);
+            this.label2.Location = new System.Drawing.Point(16, 98);
+            this.label2.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.Size = new System.Drawing.Size(160, 32);
             this.label2.TabIndex = 6;
             this.label2.Text = "Arguments:";
             // 
             // prechange_arguments_t
             // 
-            this.prechange_arguments_t.Location = new System.Drawing.Point(72, 39);
+            this.prechange_arguments_t.Location = new System.Drawing.Point(192, 93);
+            this.prechange_arguments_t.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.prechange_arguments_t.Name = "prechange_arguments_t";
-            this.prechange_arguments_t.Size = new System.Drawing.Size(582, 20);
+            this.prechange_arguments_t.Size = new System.Drawing.Size(1545, 38);
             this.prechange_arguments_t.TabIndex = 2;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.postChangeSkipComp);
             this.groupBox2.Controls.Add(this.postchange_prog_button);
             this.groupBox2.Controls.Add(this.postchange_waittime_n);
             this.groupBox2.Controls.Add(this.label4);
@@ -206,33 +232,47 @@ namespace passwdhk
             this.groupBox2.Controls.Add(this.postchange_arguments_t);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.postchange_program_t);
-            this.groupBox2.Location = new System.Drawing.Point(12, 125);
+            this.groupBox2.Location = new System.Drawing.Point(32, 298);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(660, 98);
-            this.groupBox2.TabIndex = 5;
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.groupBox2.Size = new System.Drawing.Size(1760, 234);
+            this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Post-change";
             // 
+            // postChangeSkipComp
+            // 
+            this.postChangeSkipComp.AutoSize = true;
+            this.postChangeSkipComp.Location = new System.Drawing.Point(549, 168);
+            this.postChangeSkipComp.Name = "postChangeSkipComp";
+            this.postChangeSkipComp.Size = new System.Drawing.Size(364, 36);
+            this.postChangeSkipComp.TabIndex = 9;
+            this.postChangeSkipComp.Text = "Skip Computer Accounts";
+            this.postChangeSkipComp.UseVisualStyleBackColor = true;
+            // 
             // postchange_prog_button
             // 
-            this.postchange_prog_button.Location = new System.Drawing.Point(579, 15);
+            this.postchange_prog_button.Location = new System.Drawing.Point(1544, 36);
+            this.postchange_prog_button.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.postchange_prog_button.Name = "postchange_prog_button";
-            this.postchange_prog_button.Size = new System.Drawing.Size(75, 23);
+            this.postchange_prog_button.Size = new System.Drawing.Size(200, 55);
             this.postchange_prog_button.TabIndex = 1;
             this.postchange_prog_button.Text = "Browse...";
             this.postchange_prog_button.UseVisualStyleBackColor = true;
-            this.postchange_prog_button.Click += new System.EventHandler(this.button5_Click);
+            this.postchange_prog_button.Click += new System.EventHandler(this.Postchange_Browse_Click);
             // 
             // postchange_waittime_n
             // 
-            this.postchange_waittime_n.Location = new System.Drawing.Point(92, 70);
+            this.postchange_waittime_n.Location = new System.Drawing.Point(245, 167);
+            this.postchange_waittime_n.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.postchange_waittime_n.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
             this.postchange_waittime_n.Name = "postchange_waittime_n";
-            this.postchange_waittime_n.Size = new System.Drawing.Size(86, 20);
+            this.postchange_waittime_n.Size = new System.Drawing.Size(229, 38);
             this.postchange_waittime_n.TabIndex = 3;
             this.postchange_waittime_n.Value = new decimal(new int[] {
             5000,
@@ -243,42 +283,47 @@ namespace passwdhk
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 72);
+            this.label4.Location = new System.Drawing.Point(16, 172);
+            this.label4.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 13);
+            this.label4.Size = new System.Drawing.Size(212, 32);
             this.label4.TabIndex = 8;
             this.label4.Text = "Wait Time (ms):";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 45);
+            this.label5.Location = new System.Drawing.Point(16, 107);
+            this.label5.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.Size = new System.Drawing.Size(160, 32);
             this.label5.TabIndex = 6;
             this.label5.Text = "Arguments:";
             // 
             // postchange_arguments_t
             // 
-            this.postchange_arguments_t.Location = new System.Drawing.Point(72, 43);
+            this.postchange_arguments_t.Location = new System.Drawing.Point(192, 103);
+            this.postchange_arguments_t.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.postchange_arguments_t.Name = "postchange_arguments_t";
-            this.postchange_arguments_t.Size = new System.Drawing.Size(582, 20);
+            this.postchange_arguments_t.Size = new System.Drawing.Size(1545, 38);
             this.postchange_arguments_t.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 20);
+            this.label6.Location = new System.Drawing.Point(16, 48);
+            this.label6.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.Size = new System.Drawing.Size(131, 32);
             this.label6.TabIndex = 4;
             this.label6.Text = "Program:";
             // 
             // postchange_program_t
             // 
-            this.postchange_program_t.Location = new System.Drawing.Point(72, 17);
+            this.postchange_program_t.Location = new System.Drawing.Point(192, 41);
+            this.postchange_program_t.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.postchange_program_t.Name = "postchange_program_t";
-            this.postchange_program_t.Size = new System.Drawing.Size(501, 20);
+            this.postchange_program_t.Size = new System.Drawing.Size(1329, 38);
             this.postchange_program_t.TabIndex = 0;
             // 
             // groupBox3
@@ -290,33 +335,37 @@ namespace passwdhk
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.log_filename_t);
-            this.groupBox3.Location = new System.Drawing.Point(12, 229);
+            this.groupBox3.Location = new System.Drawing.Point(32, 546);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(660, 70);
-            this.groupBox3.TabIndex = 6;
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.groupBox3.Size = new System.Drawing.Size(1760, 167);
+            this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Logging";
             // 
             // logging_filename_button
             // 
-            this.logging_filename_button.Location = new System.Drawing.Point(579, 13);
+            this.logging_filename_button.Location = new System.Drawing.Point(1544, 31);
+            this.logging_filename_button.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.logging_filename_button.Name = "logging_filename_button";
-            this.logging_filename_button.Size = new System.Drawing.Size(75, 23);
+            this.logging_filename_button.Size = new System.Drawing.Size(200, 55);
             this.logging_filename_button.TabIndex = 1;
             this.logging_filename_button.Text = "Browse...";
             this.logging_filename_button.UseVisualStyleBackColor = true;
-            this.logging_filename_button.Click += new System.EventHandler(this.button1_Click);
+            this.logging_filename_button.Click += new System.EventHandler(this.Logging_Browse_Click);
             // 
             // log_level_n
             // 
-            this.log_level_n.Location = new System.Drawing.Point(321, 41);
+            this.log_level_n.Location = new System.Drawing.Point(856, 98);
+            this.log_level_n.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.log_level_n.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
             this.log_level_n.Name = "log_level_n";
-            this.log_level_n.Size = new System.Drawing.Size(68, 20);
+            this.log_level_n.Size = new System.Drawing.Size(181, 38);
             this.log_level_n.TabIndex = 3;
             // 
             // log_maxsize_n
@@ -326,14 +375,15 @@ namespace passwdhk
             0,
             0,
             0});
-            this.log_maxsize_n.Location = new System.Drawing.Point(112, 41);
+            this.log_maxsize_n.Location = new System.Drawing.Point(299, 98);
+            this.log_maxsize_n.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.log_maxsize_n.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
             this.log_maxsize_n.Name = "log_maxsize_n";
-            this.log_maxsize_n.Size = new System.Drawing.Size(91, 20);
+            this.log_maxsize_n.Size = new System.Drawing.Size(243, 38);
             this.log_maxsize_n.TabIndex = 2;
             this.log_maxsize_n.Value = new decimal(new int[] {
             8192,
@@ -344,43 +394,48 @@ namespace passwdhk
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(258, 44);
+            this.label10.Location = new System.Drawing.Point(688, 105);
+            this.label10.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(57, 13);
+            this.label10.Size = new System.Drawing.Size(147, 32);
             this.label10.TabIndex = 10;
             this.label10.Text = "Log Level:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 44);
+            this.label7.Location = new System.Drawing.Point(16, 105);
+            this.label7.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 13);
+            this.label7.Size = new System.Drawing.Size(271, 32);
             this.label7.TabIndex = 8;
             this.label7.Text = "Maximum Size (KB):";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 18);
+            this.label9.Location = new System.Drawing.Point(16, 43);
+            this.label9.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 13);
+            this.label9.Size = new System.Drawing.Size(141, 32);
             this.label9.TabIndex = 4;
             this.label9.Text = "Filename:";
             // 
             // log_filename_t
             // 
-            this.log_filename_t.Location = new System.Drawing.Point(61, 15);
+            this.log_filename_t.Location = new System.Drawing.Point(163, 36);
+            this.log_filename_t.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.log_filename_t.Name = "log_filename_t";
-            this.log_filename_t.Size = new System.Drawing.Size(512, 20);
+            this.log_filename_t.Size = new System.Drawing.Size(1359, 38);
             this.log_filename_t.TabIndex = 0;
             // 
             // password_urlencode_c
             // 
             this.password_urlencode_c.AutoSize = true;
-            this.password_urlencode_c.Location = new System.Drawing.Point(6, 19);
+            this.password_urlencode_c.Location = new System.Drawing.Point(16, 45);
+            this.password_urlencode_c.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.password_urlencode_c.Name = "password_urlencode_c";
-            this.password_urlencode_c.Size = new System.Drawing.Size(88, 17);
+            this.password_urlencode_c.Size = new System.Drawing.Size(213, 36);
             this.password_urlencode_c.TabIndex = 0;
             this.password_urlencode_c.Text = "URL Encode";
             this.password_urlencode_c.UseVisualStyleBackColor = true;
@@ -388,9 +443,10 @@ namespace passwdhk
             // password_quote_c
             // 
             this.password_quote_c.AutoSize = true;
-            this.password_quote_c.Location = new System.Drawing.Point(105, 19);
+            this.password_quote_c.Location = new System.Drawing.Point(280, 45);
+            this.password_quote_c.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.password_quote_c.Name = "password_quote_c";
-            this.password_quote_c.Size = new System.Drawing.Size(92, 17);
+            this.password_quote_c.Size = new System.Drawing.Size(229, 36);
             this.password_quote_c.TabIndex = 1;
             this.password_quote_c.Text = "Double Quote";
             this.password_quote_c.UseVisualStyleBackColor = true;
@@ -398,102 +454,114 @@ namespace passwdhk
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 388);
+            this.label8.Location = new System.Drawing.Point(32, 925);
+            this.label8.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 13);
+            this.label8.Size = new System.Drawing.Size(247, 32);
             this.label8.TabIndex = 12;
             this.label8.Text = "Working Directory:";
             // 
             // working_dir_t
             // 
-            this.working_dir_t.Location = new System.Drawing.Point(184, 385);
+            this.working_dir_t.Location = new System.Drawing.Point(491, 918);
+            this.working_dir_t.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.working_dir_t.Name = "working_dir_t";
-            this.working_dir_t.Size = new System.Drawing.Size(401, 20);
+            this.working_dir_t.Size = new System.Drawing.Size(1063, 38);
             this.working_dir_t.TabIndex = 12;
             this.working_dir_t.Text = "c:\\windows\\temp\\";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 362);
+            this.label11.Location = new System.Drawing.Point(32, 863);
+            this.label11.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(166, 13);
+            this.label11.Size = new System.Drawing.Size(444, 32);
             this.label11.TabIndex = 14;
             this.label11.Text = "Environment (\"$%%$\" separated):";
             // 
             // environment_t
             // 
-            this.environment_t.Location = new System.Drawing.Point(184, 359);
+            this.environment_t.Location = new System.Drawing.Point(491, 856);
+            this.environment_t.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.environment_t.Name = "environment_t";
-            this.environment_t.Size = new System.Drawing.Size(482, 20);
+            this.environment_t.Size = new System.Drawing.Size(1279, 38);
             this.environment_t.TabIndex = 11;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(221, 325);
+            this.label12.Location = new System.Drawing.Point(589, 775);
+            this.label12.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(66, 13);
-            this.label12.TabIndex = 12;
+            this.label12.Size = new System.Drawing.Size(178, 32);
+            this.label12.TabIndex = 9;
             this.label12.Text = "CPU Priority:";
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.password_urlencode_c);
             this.groupBox4.Controls.Add(this.password_quote_c);
-            this.groupBox4.Location = new System.Drawing.Point(12, 305);
+            this.groupBox4.Location = new System.Drawing.Point(32, 727);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(203, 45);
-            this.groupBox4.TabIndex = 7;
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.groupBox4.Size = new System.Drawing.Size(541, 107);
+            this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Password Escaping";
             // 
             // redirect_output_c
             // 
             this.redirect_output_c.AutoSize = true;
-            this.redirect_output_c.Location = new System.Drawing.Point(369, 324);
+            this.redirect_output_c.Location = new System.Drawing.Point(984, 773);
+            this.redirect_output_c.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.redirect_output_c.Name = "redirect_output_c";
-            this.redirect_output_c.Size = new System.Drawing.Size(101, 17);
-            this.redirect_output_c.TabIndex = 9;
+            this.redirect_output_c.Size = new System.Drawing.Size(252, 36);
+            this.redirect_output_c.TabIndex = 11;
             this.redirect_output_c.Text = "Redirect Output";
             this.redirect_output_c.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 9);
+            this.label13.Location = new System.Drawing.Point(32, 21);
+            this.label13.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(318, 13);
+            this.label13.Size = new System.Drawing.Size(852, 32);
             this.label13.TabIndex = 3;
-            this.label13.Text = "Configuration of the passwdhk settings.  For more information see:";
+            this.label13.Text = "Configuration of the passwdHk settings.  For more information see:";
             // 
-            // linkLabel1
+            // Project_link
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(333, 9);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(212, 13);
-            this.linkLabel1.TabIndex = 3;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "http://sourceforge.net/projects/passwdhk/";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.Project_link.AutoSize = true;
+            this.Project_link.Location = new System.Drawing.Point(888, 21);
+            this.Project_link.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.Project_link.Name = "Project_link";
+            this.Project_link.Size = new System.Drawing.Size(421, 32);
+            this.Project_link.TabIndex = 4;
+            this.Project_link.TabStop = true;
+            this.Project_link.Text = "https://sf.net/projects/passwdhk/";
+            this.Project_link.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Project_LinkClicked);
             // 
             // workdir_button
             // 
-            this.workdir_button.Location = new System.Drawing.Point(591, 383);
+            this.workdir_button.Location = new System.Drawing.Point(1576, 913);
+            this.workdir_button.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.workdir_button.Name = "workdir_button";
-            this.workdir_button.Size = new System.Drawing.Size(75, 23);
+            this.workdir_button.Size = new System.Drawing.Size(200, 55);
             this.workdir_button.TabIndex = 13;
             this.workdir_button.Text = "Browse...";
             this.workdir_button.UseVisualStyleBackColor = true;
-            this.workdir_button.Click += new System.EventHandler(this.button6_Click);
+            this.workdir_button.Click += new System.EventHandler(this.Workdir_Browse_Click);
             // 
             // enable_passwdhk_c
             // 
             this.enable_passwdhk_c.AutoSize = true;
-            this.enable_passwdhk_c.Location = new System.Drawing.Point(12, 413);
+            this.enable_passwdhk_c.Location = new System.Drawing.Point(32, 985);
+            this.enable_passwdhk_c.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.enable_passwdhk_c.Name = "enable_passwdhk_c";
-            this.enable_passwdhk_c.Size = new System.Drawing.Size(113, 17);
+            this.enable_passwdhk_c.Size = new System.Drawing.Size(283, 36);
             this.enable_passwdhk_c.TabIndex = 14;
             this.enable_passwdhk_c.Text = "Enable PasswdHk";
             this.enable_passwdhk_c.UseVisualStyleBackColor = true;
@@ -502,11 +570,12 @@ namespace passwdhk
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(101, 453);
+            this.label14.Location = new System.Drawing.Point(269, 1080);
+            this.label14.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(249, 13);
+            this.label14.Size = new System.Drawing.Size(678, 32);
             this.label14.TabIndex = 15;
-            this.label14.Text = "Any changes applied needs a reboot to take effect.";
+            this.label14.Text = "Any changes applied requires a reboot to take effect.";
             // 
             // priority_d
             // 
@@ -516,34 +585,38 @@ namespace passwdhk
             "Idle",
             "Normal",
             "High"});
-            this.priority_d.Location = new System.Drawing.Point(293, 322);
+            this.priority_d.Location = new System.Drawing.Point(781, 768);
+            this.priority_d.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.priority_d.Name = "priority_d";
-            this.priority_d.Size = new System.Drawing.Size(64, 21);
-            this.priority_d.TabIndex = 16;
+            this.priority_d.Size = new System.Drawing.Size(164, 39);
+            this.priority_d.TabIndex = 10;
             // 
             // cancel_button
             // 
-            this.cancel_button.Location = new System.Drawing.Point(435, 448);
+            this.cancel_button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancel_button.Location = new System.Drawing.Point(1160, 1068);
+            this.cancel_button.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.cancel_button.Name = "cancel_button";
-            this.cancel_button.Size = new System.Drawing.Size(75, 23);
-            this.cancel_button.TabIndex = 17;
+            this.cancel_button.Size = new System.Drawing.Size(200, 55);
+            this.cancel_button.TabIndex = 1;
             this.cancel_button.Text = "Cancel";
             this.cancel_button.UseVisualStyleBackColor = true;
-            this.cancel_button.Click += new System.EventHandler(this.cancel_button_Click);
+            this.cancel_button.Click += new System.EventHandler(this.Cancel_Button_Click);
             // 
             // Configuration
             // 
             this.AcceptButton = this.apply_button;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.CancelButton = this.cancel_button;
-            this.ClientSize = new System.Drawing.Size(684, 483);
+            this.ClientSize = new System.Drawing.Size(1815, 1142);
             this.Controls.Add(this.cancel_button);
             this.Controls.Add(this.priority_d);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.enable_passwdhk_c);
             this.Controls.Add(this.workdir_button);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.Project_link);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.redirect_output_c);
             this.Controls.Add(this.label12);
@@ -559,8 +632,9 @@ namespace passwdhk
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "Configuration";
-            this.Text = "passwdhk Configuration Manager";
+            this.Text = "passwdHk Configurator";
             this.Load += new System.EventHandler(this.Configuration_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -615,7 +689,7 @@ namespace passwdhk
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.CheckBox redirect_output_c;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel Project_link;
         private System.Windows.Forms.Button prechange_prog_button;
         private System.Windows.Forms.Button postchange_prog_button;
         private System.Windows.Forms.Button workdir_button;
@@ -624,6 +698,8 @@ namespace passwdhk
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox priority_d;
         private System.Windows.Forms.Button cancel_button;
+        private System.Windows.Forms.CheckBox preChangeSkipComp;
+        private System.Windows.Forms.CheckBox postChangeSkipComp;
     }
 }
 

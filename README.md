@@ -6,8 +6,11 @@ The release dll has been built and tested for Windows Server x64 only. See the O
 
 Requirements
 ============
-Server 2008 R2 +  
-Microsoft Visual C++ 2010 Redistributable Package (x64)
+Server 2008 R2 to Server 2012 R2  
+v1.0 - Microsoft Visual C++ 2010 Redistributable Package (x64)
+
+Server 2016 +
+v1.1 - Microsoft Visual C++ 2017 Redistributable Package (x64)
 
 Installation
 ========

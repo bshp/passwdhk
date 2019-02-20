@@ -44,6 +44,9 @@
     <ClInclude Include="util.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="passwdhk.def">
@@ -52,10 +55,24 @@
     <None Include="passwdhk.reg">
       <Filter>misc</Filter>
     </None>
+    <None Include="passwd.bat">
+      <Filter>misc</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.Txt">
       <Filter>misc</Filter>
     </Text>
+    <Text Include="CHANGES.txt">
+      <Filter>misc</Filter>
+    </Text>
+    <Text Include="LICENSE.txt">
+      <Filter>misc</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="passwdhk.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

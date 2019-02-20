@@ -22,26 +22,26 @@
     <ProjectName>passwdhk</ProjectName>
     <ProjectGuid>{FCE3DC92-3ACA-4A1A-B02D-A4C5FCC294D5}</ProjectGuid>
     <RootNamespace>passwdhk</RootNamespace>
-    <WindowsTargetPlatformVersion>7.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <PlatformToolset>v141_xp</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <PlatformToolset>v141_xp</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v141_xp</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <PlatformToolset>v141_xp</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -90,8 +90,12 @@
       <DataExecutionPrevention />
       <MinimumRequiredVersion />
       <ModuleDefinitionFile>.\passwdhk.def</ModuleDefinitionFile>
+      <AdditionalDependencies>advapi32.lib;kernel32.lib</AdditionalDependencies>
     </Link>
     <Bscmake />
+    <ClCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
@@ -111,8 +115,12 @@
       <DataExecutionPrevention />
       <MinimumRequiredVersion />
       <ModuleDefinitionFile>.\passwdhk.def</ModuleDefinitionFile>
+      <AdditionalDependencies>advapi32.lib;kernel32.lib</AdditionalDependencies>
     </Link>
     <Bscmake />
+    <ClCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Midl>
@@ -132,8 +140,12 @@
       <DataExecutionPrevention />
       <MinimumRequiredVersion />
       <ModuleDefinitionFile>.\passwdhk.def</ModuleDefinitionFile>
+      <AdditionalDependencies>advapi32.lib;kernel32.lib</AdditionalDependencies>
     </Link>
     <Bscmake />
+    <ClCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
@@ -153,8 +165,12 @@
       <DataExecutionPrevention />
       <MinimumRequiredVersion />
       <ModuleDefinitionFile>.\passwdhk.def</ModuleDefinitionFile>
+      <AdditionalDependencies>advapi32.lib;kernel32.lib</AdditionalDependencies>
     </Link>
     <Bscmake />
+    <ClCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="logging.cpp" />
@@ -166,14 +182,31 @@
     <ClInclude Include="logging.h" />
     <ClInclude Include="passwdhk.h" />
     <ClInclude Include="registry.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="util.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="passwd.bat">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
     <None Include="passwdhk.def" />
-    <None Include="passwdhk.reg" />
+    <None Include="passwdhk.reg">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="ReadMe.Txt" />
+    <Text Include="CHANGES.txt">
+      <DeploymentContent>true</DeploymentContent>
+    </Text>
+    <Text Include="LICENSE.txt">
+      <DeploymentContent>true</DeploymentContent>
+    </Text>
+    <Text Include="ReadMe.Txt">
+      <DeploymentContent>true</DeploymentContent>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="passwdhk.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

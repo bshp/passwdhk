@@ -70,7 +70,7 @@ LPWSTR pshk_struct2str()
 	
 	tmp = (wchar_t *)calloc(1, 10 * PSHK_REG_VALUE_MAX_LEN_BYTES);
 	if (tmp != NULL) {
-		swprintf_s(tmp, 10 * PSHK_REG_VALUE_MAX_LEN, L"\r\nvalid: %d\r\npreChangeProg: '%s'\r\npreChangeProgArgs: '%s'\r\npreChangeProgWait: %d\r\npostChangeProg: '%s'\r\npostChangeProgArgs: '%s'\r\npostChangeProgWait: %d\r\nlogFile: '%s'\r\nmaxLogSize: %d\r\nlogLevel: %d\r\nurlencode: %s\r\ndoublequote: %s\r\nenvironmentStr: '%s'\r\nworkingdirectory: '%s'\r\npriority: %d\r\ninheritParentHandles: %s\r\n", pshk_config.valid, null_to_string(pshk_config.preChangeProg), null_to_string(pshk_config.preChangeProgArgs), pshk_config.preChangeProgWait, null_to_string(pshk_config.postChangeProg), null_to_string(pshk_config.postChangeProgArgs), pshk_config.postChangeProgWait, null_to_string(pshk_config.logFile), pshk_config.maxLogSize, pshk_config.logLevel, bool_to_string(pshk_config.urlencode), bool_to_string(pshk_config.doublequote), null_to_string(pshk_config.environmentStr), null_to_string(pshk_config.workingDir), pshk_config.priority, bool_to_string(pshk_config.inheritParentHandles));
+		swprintf_s(tmp, 10 * PSHK_REG_VALUE_MAX_LEN, L"\r\nvalid: %d\r\npreChangeProg: '%s'\r\npreChangeProgArgs: '%s'\r\npreChangeProgWait: %d\r\npreChangeProgSkipComp: '%s'\r\npostChangeProg: '%s'\r\npostChangeProgArgs: '%s'\r\npostChangeProgWait: %d\r\npostChangeProgSkipComp: '%s'\r\nlogFile: '%s'\r\nmaxLogSize: %d\r\nlogLevel: %d\r\nurlencode: %s\r\ndoublequote: %s\r\nenvironmentStr: '%s'\r\nworkingdirectory: '%s'\r\npriority: %d\r\ninheritParentHandles: %s\r\n", pshk_config.valid, null_to_string(pshk_config.preChangeProg), null_to_string(pshk_config.preChangeProgArgs), pshk_config.preChangeProgWait, bool_to_string(pshk_config.preChangeProgSkipComp), null_to_string(pshk_config.postChangeProg), null_to_string(pshk_config.postChangeProgArgs), pshk_config.postChangeProgWait, bool_to_string(pshk_config.postChangeProgSkipComp), null_to_string(pshk_config.logFile), pshk_config.maxLogSize, pshk_config.logLevel, bool_to_string(pshk_config.urlencode), bool_to_string(pshk_config.doublequote), null_to_string(pshk_config.environmentStr), null_to_string(pshk_config.workingDir), pshk_config.priority, bool_to_string(pshk_config.inheritParentHandles));
 		ret = _wcsdup(tmp);
 		free(tmp);
 	}
@@ -186,6 +186,7 @@ int pshk_exec_prog(int option, PUNICODE_STRING username, PUNICODE_STRING passwor
 	wchar_t *passwordCopy, *passwordCopy2;
 	wchar_t *bufferFormat = L"\"%s\" %s %s %s";
 	int wait;
+	bool skipComp;
 	int ret = PSHK_SUCCESS;
 	DWORD_PTR bufferChars, bufferBytes;
 	DWORD exitCode = 0;
@@ -199,10 +200,12 @@ int pshk_exec_prog(int option, PUNICODE_STRING username, PUNICODE_STRING passwor
 		prog = pshk_config.preChangeProg;
 		args = pshk_config.preChangeProgArgs;
 		wait = pshk_config.preChangeProgWait;
+		skipComp = pshk_config.preChangeProgSkipComp;
 	} else if (option == PSHK_POST_CHANGE) {
 		prog = pshk_config.postChangeProg;
 		args = pshk_config.postChangeProgArgs;
 		wait = pshk_config.postChangeProgWait;
+		skipComp = pshk_config.postChangeProgSkipComp;
 	} else // Unknown option
 		return PSHK_FAILURE;
 
@@ -220,6 +223,19 @@ int pshk_exec_prog(int option, PUNICODE_STRING username, PUNICODE_STRING passwor
 	// Copy buffers to ensure null-termination
 	usernameCopy = alloc_copy(username->Buffer, username->Length);
 	passwordCopy = alloc_copy(password->Buffer, password->Length);
+
+	// Skip accounts with $ at end.  These should be computer accounts.
+	if (skipComp)
+	{
+		if (wcscmp(L"$", &usernameCopy[wcslen(usernameCopy)-1]) == 0)
+		{
+			free(usernameCopy);
+			SecureZeroMemory(passwordCopy, wcslen(passwordCopy) * sizeof(wchar_t));
+			free(passwordCopy);
+			return PSHK_SUCCESS;
+		}
+	}
+
 	if (usernameCopy != NULL && passwordCopy != NULL) {
 		// URL encode username and password
 		if (pshk_config.urlencode == TRUE) {

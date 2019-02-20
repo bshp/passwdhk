@@ -1,11 +1,14 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "passwdhk", "passwdhk-2008.vcxproj", "{FCE3DC92-3ACA-4A1A-B02D-A4C5FCC294D5}"
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "passwdhk", "passwdhk-2008.vcproj", "{FCE3DC92-3ACA-4A1A-B02D-A4C5FCC294D5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "passwdhk-driver", "passwdhk-driver\passwdhk-driver-2008.vcxproj", "{029987A5-4837-4F1F-A73C-79B1E8AFDA26}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "passwdhk-driver", "passwdhk-driver\passwdhk-driver-2008.vcproj", "{029987A5-4837-4F1F-A73C-79B1E8AFDA26}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FCE3DC92-3ACA-4A1A-B02D-A4C5FCC294D5} = {FCE3DC92-3ACA-4A1A-B02D-A4C5FCC294D5}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "passwdhk-config-2008", "passwdhk-config\passwdhk-config-2008.csproj", "{EE3F416E-25AB-4D4E-A957-086F1CC4603A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "passwdhk-config", "passwdhk-config\passwdhk-config-2008.csproj", "{EE3F416E-25AB-4D4E-A957-086F1CC4603A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
