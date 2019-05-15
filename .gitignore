@@ -16,6 +16,7 @@
 [Dd]ebug/
 [Dd]ebugPublic/
 x86/
+x64/
 bld/
 [Bb]in/
 [Oo]bj/
@@ -62,6 +63,7 @@ StyleCopReport.xml
 *.obj
 *.iobj
 *.pch
+*.exp
 *.pdb
 *.ipdb
 *.pgc
