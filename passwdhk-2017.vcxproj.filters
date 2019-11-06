@@ -13,66 +13,78 @@
       <UniqueIdentifier>{2e4152d5-dd9c-4b16-83e3-6aec10967125}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
-    <Filter Include="misc">
+    <Filter Include="resources">
       <UniqueIdentifier>{d5e6c6bf-181f-4171-b8b0-51930caf2d85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources\samples">
+      <UniqueIdentifier>{432f6b0d-bf32-4c89-a482-d9b45449f504}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="logging.cpp">
+    <ClCompile Include="src\main\logging.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="passwdhk.cpp">
+    <ClCompile Include="src\main\passwdhk.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="registry.cpp">
+    <ClCompile Include="src\main\registry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="util.cpp">
+    <ClCompile Include="src\main\util.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="logging.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="passwdhk.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="registry.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="util.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="passwdhk.def">
+    <None Include="src\resources\passwd.bat">
+      <Filter>resources</Filter>
+    </None>
+    <None Include="src\resources\passwdhk.reg">
+      <Filter>resources</Filter>
+    </None>
+    <None Include="src\main\passwdhk.def">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="passwdhk.reg">
-      <Filter>misc</Filter>
+    <None Include="src\resources\samples\basic.bat">
+      <Filter>resources\samples</Filter>
     </None>
-    <None Include="passwd.bat">
-      <Filter>misc</Filter>
+    <None Include="src\resources\samples\rest2ldap_opendj.bat">
+      <Filter>resources\samples</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.Txt">
-      <Filter>misc</Filter>
+      <Filter>resources</Filter>
     </Text>
     <Text Include="CHANGES.txt">
-      <Filter>misc</Filter>
+      <Filter>resources</Filter>
     </Text>
     <Text Include="LICENSE.txt">
-      <Filter>misc</Filter>
+      <Filter>resources</Filter>
+    </Text>
+    <Text Include="src\resources\samples\Instructions.txt">
+      <Filter>resources\samples</Filter>
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="passwdhk.rc">
+    <ResourceCompile Include="src\main\passwdhk.rc">
       <Filter>Source Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\main\logging.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\main\passwdhk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\main\registry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\main\resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\main\util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

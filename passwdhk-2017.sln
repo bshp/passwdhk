@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "passwdhk", "passwdhk-2017.vcxproj", "{FCE3DC92-3ACA-4A1A-B02D-A4C5FCC294D5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "passwdhk-driver", "passwdhk-driver\passwdhk-driver-2017.vcxproj", "{029987A5-4837-4F1F-A73C-79B1E8AFDA26}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "passwdhk-driver", "src\main\passwdhk-driver\passwdhk-driver-2017.vcxproj", "{029987A5-4837-4F1F-A73C-79B1E8AFDA26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "passwdhk-config-2017", "passwdhk-config\passwdhk-config-2017.csproj", "{EE3F416E-25AB-4D4E-A957-086F1CC4603A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "passwdhk-config", "src\main\passwdhk-config\passwdhk-config.csproj", "{EE3F416E-25AB-4D4E-A957-086F1CC4603A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

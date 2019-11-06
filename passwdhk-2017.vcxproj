@@ -22,7 +22,11 @@
     <ProjectName>passwdhk</ProjectName>
     <ProjectGuid>{FCE3DC92-3ACA-4A1A-B02D-A4C5FCC294D5}</ProjectGuid>
     <RootNamespace>passwdhk</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <name>passwdhk</name>
+    <targetdir>target</targetdir>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -164,34 +168,37 @@
     <Link>
       <DataExecutionPrevention />
       <MinimumRequiredVersion />
-      <ModuleDefinitionFile>.\passwdhk.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>src\main\passwdhk.def</ModuleDefinitionFile>
       <AdditionalDependencies>advapi32.lib;kernel32.lib</AdditionalDependencies>
     </Link>
     <Bscmake />
     <ClCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <PostBuildEvent>
+      <Command>xcopy $(SolutionDir)src\resources\* $(SolutionDir)target /S /I /Y
+copy $(SolutionDir)README.md $(SolutionDir)target\Installation.txt /Y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="logging.cpp" />
-    <ClCompile Include="passwdhk.cpp" />
-    <ClCompile Include="registry.cpp" />
-    <ClCompile Include="util.cpp" />
+    <ClCompile Include="src\main\logging.cpp" />
+    <ClCompile Include="src\main\passwdhk.cpp" />
+    <ClCompile Include="src\main\registry.cpp" />
+    <ClCompile Include="src\main\util.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="logging.h" />
-    <ClInclude Include="passwdhk.h" />
-    <ClInclude Include="registry.h" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="util.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="passwd.bat">
+    <None Include="src\main\passwdhk.def" />
+    <None Include="src\resources\passwd.bat">
+      <FileType>Script</FileType>
+    </None>
+    <None Include="src\resources\passwdhk.reg">
       <DeploymentContent>true</DeploymentContent>
     </None>
-    <None Include="passwdhk.def" />
-    <None Include="passwdhk.reg">
-      <DeploymentContent>true</DeploymentContent>
+    <None Include="src\resources\samples\basic.bat">
+      <DeploymentContent>false</DeploymentContent>
+    </None>
+    <None Include="src\resources\samples\rest2ldap_opendj.bat">
+      <DeploymentContent>false</DeploymentContent>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -204,9 +211,19 @@
     <Text Include="ReadMe.Txt">
       <DeploymentContent>true</DeploymentContent>
     </Text>
+    <Text Include="src\resources\samples\Instructions.txt">
+      <DeploymentContent>false</DeploymentContent>
+    </Text>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="passwdhk.rc" />
+    <ResourceCompile Include="src\main\passwdhk.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\main\logging.h" />
+    <ClInclude Include="src\main\passwdhk.h" />
+    <ClInclude Include="src\main\registry.h" />
+    <ClInclude Include="src\main\resource.h" />
+    <ClInclude Include="src\main\util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
