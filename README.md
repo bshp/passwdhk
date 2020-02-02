@@ -26,9 +26,12 @@ Notes
 =======  
 The default settings set error logging on and file paths to C:\WINDOWS\System32\LogFiles . Modify the reg file accordingly.  
   
-Dictionary Matching (Alpha - Work in progress)  
+HaveIBeenPwned and Dictionary Matching (Alpha - Work in progress)  
 ===================  
-There is an alpha preChangeScript to check against a defined wordlist, can be wirldcard matching, any password containing the disallowed value or whole word matching.  
+There is an (alpha) Pre-Change Script, preChangeFilter.ps1  
+(a) Can be set to check pwned passwords and email using the https://haveibeenpwned.com/ API services  
+(b) Check against a defined wordlist, can be wildcard matching, any password containing the disallowed value or whole word matching  
+(c) If you user email found by haveibeenpwned send an email alert/notification  
   
 Log Levels  
 ==========  
