@@ -14,14 +14,10 @@ v1.3 - Microsoft Visual C++ 2017 Redistributable Package (x64)
   
 ## Installation  
 ============  
-(a) Copy "passwdhk.dll" to C:\Windows\system32  
+[Installation Guide](src/resources/Installation_Guide_v1.3.pdf)  
   
-(b) Edit the "HKLM->SYSTEM->CurrentControlSet->Control->Lsa->Notification Packages" registry value and add "passwdhk" (without the quotes) to the list of names there (on a new line).  
-  
-(c) Edit the file "passwdhk.reg" to suit your environment and then import it into the registry by double-clicking that file.  
-  
-(d) Reboot.  
-  
+If the link is not working, it is located under /src/resources    
+
 ## Notes  
 =======  
 The default settings set error logging on and file paths to C:\WINDOWS\System32\LogFiles . Modify the reg file accordingly.  
