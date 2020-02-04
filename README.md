@@ -29,6 +29,7 @@ There is an (alpha) Pre-Change Script, preChangeFilter.ps1
 (b) Check against a defined wordlist, can be wildcard matching, any password containing the disallowed value or whole word matching  
 (c) If you user email found by haveibeenpwned send an email alert/notification  
   
+You can grab even larger wordlist's, the top 1xxx from the NIST blacklist located https://github.com/cry/nbp/tree/master/build_collection
 ## Log Levels  
 ==========  
   
