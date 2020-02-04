@@ -7,6 +7,9 @@
 # Author: Jason A. Everling
 # Version: 0.3 alpha
 #
+# Credits: The getPwnedPasswd function was adapted from the 
+#   haveibeenpwned powershell module
+#
 ######################################################
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
@@ -15,6 +18,7 @@ $passwd = $args[1];
 $settings = "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\passwdhk"
 $wordlist = "C:\Windows\PasswdHK\wordlist.txt"
 $pwnedAPI = "https://api.pwnedpasswords.com/range/";
+$pwnedAPIKey = "";
 
 # Functions
 function datetime() {
@@ -36,12 +40,12 @@ function log([int]$numEid, [string]$strLevel, [string]$strMsg) {
     $now = '';
 }
 
-function getSetting($ini) {
+function getSetting([string]$ini) {
     $result = (Get-ItemProperty -Path $settings -Name $ini).$ini;
     return $result;
 }
 
-function getHashedPasswd($textToHash) {
+function getHashedPasswd([string]$textToHash) {
     $hasher = New-Object -TypeName "System.Security.Cryptography.SHA1CryptoServiceProvider";
     $toHash = [System.Text.Encoding]::UTF8.GetBytes($textToHash);
     $bytes = $hasher.ComputeHash($toHash);
