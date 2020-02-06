@@ -8,6 +8,11 @@ The release dll has been built and tested for Windows Server x64 only. If you yo
   
 If you get any errors/or warnings and you reboot your domain controller you could bluescreen because the LSA notification package's cannot return any errors on startup. In this case, you would need to boot into recovery mode and remove the registry entry.  
   
+  The current 'master' branch dll hashes, a release package has it's own hash, this is ONLY for master branch target/passwdhk.dll  
+  
+  MD5: 35E4CDDB7FF3D55AFCE9B2A02A19B05D  
+  SHA-1: ADD4D1E2AA74A2420210273E2D56D2F5A74CC66E  
+  
 ## Requirements  
 ===============  
 #### v1.0  
