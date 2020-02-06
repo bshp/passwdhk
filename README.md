@@ -5,7 +5,8 @@ This is a generic password filter for Active Directory that will run the program
 Included are (2) Powershell Scripts, they are configured to use HaveIBeenPwned API services and Dictionary Wordlist matching using NIST blacklists.  
   
 The release dll has been built and tested for Windows Server x64 only. If you you build the dll yourself, make sure you do not get ANY errors or warning, absolutly ZERO.  
-If you get any errors/or warnings and you reboot your domain controller you could bluescreen because the LSA package is required. In this case, you would need to boot into recovery mode and remove the registry entry.  
+  
+If you get any errors/or warnings and you reboot your domain controller you could bluescreen because the LSA notification package's cannot return any errors on startup. In this case, you would need to boot into recovery mode and remove the registry entry.  
   
 ## Requirements  
 ===============  
