@@ -10,7 +10,7 @@
 $user = $args[0];
 $passwd = $args[1];
 $settings = "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\passwdhk";
-$curl = $Env:Programfiles"\Curl";
+$curl = $Env:Programfiles"\Curl\bin";
 $gam = $Env:Programfiles"\Google\Google Apps Manager";
 $retcode = 0;
 
@@ -74,7 +74,7 @@ if ($syncGSuite) {
 
 # If sync password with OpenDJ
 if ($syncOpenDJ) {
-    & "$curl\bin\curl.exe" --header "Content-Type: application/json" --header "X-OpenIDM-Username: admin-uid" --header "X-OpenIDM-Password: admin-password" -X PATCH "http://opendj.example.com/users/$user" --data "[{\"operation\": \"replace\", \"field\": \"userPassword\", \"value\": \"$passwd\"}]"
+    & "$curl\curl.exe" --header "Content-Type: application/json" --header "X-OpenIDM-Username: admin-uid" --header "X-OpenIDM-Password: admin-password" -X PATCH "http://opendj.example.com/users/$user" --data "[{\"operation\": \"replace\", \"field\": \"userPassword\", \"value\": \"$passwd\"}]"
     if ($? -eq $false ) {
         log 400 "Error" "OpenDJ password sync encountered an error for $user";
         $retcode = 1;
