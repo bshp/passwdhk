@@ -32,11 +32,20 @@ If the link is not working, it is located under /src/resources
 ## Notes  
 ========  
 The default settings set error logging on and file paths to C:\WINDOWS\System32\LogFiles . Modify the reg file accordingly.  
+
+#### Manage via Group Policy (work in progress)  
+==============================================================  
+The feature/gpotemplate branch is a work in progress to moving passwdk managamenet to group policy.  
   
-#### HaveIBeenPwned and Dictionary Matching (Work in progress)  
+Road Map  
+  - Update passwdhk dll to use policies subkey, i.e HKLM:\Software\Policies  
+  - Create new group policy templates to read/write from HKLM:\Software\Policies\PasswdHK subkey  
+  - Create enablement\disablement of passwdhk via group policy settings  
+  
+#### HaveIBeenPwned and Dictionary Matching (work in progress)  
 ==============================================================  
 There is a Pre-Change Script, preChangeFilter.ps1, and a Post-Change Script, postChangeFilter.ps1  
-(a) Can be set to check pwned passwords and email using the https://haveibeenpwned.com/ API services  
+(a) Can be set to check pwned passwords and email using the https://haveibeenpwned.com/ API services  Checking a persons email requires an API key, password hash checking does not
 (b) Check against a defined wordlist, can be wildcard matching, any password containing the disallowed value or whole word matching  
 (c) If you user email found by haveibeenpwned send an email alert/notification  
   
