@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!--  PasswdHK Template  -->
+<policyDefinitionResources 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitionResources"
+    schemaVersion="1.0"
+    revision="1.0">
+  <displayName>
+  </displayName>
+  <description>
+  </description>
+  <resources>
+    <stringTable>
+      <string id="CAT_PASSWDHK">PasswdHK</string>
+      <string id="CAT_PASSWDHK_POST">Post Change</string>
+      <string id="CAT_PASSWDHK_PRE">Pre Change</string>
+      <string id="CAT_PASSWDHK_SYSTEM">System Options</string>
+      <string id="POL_LogLevel">Logging Level</string>
+      <string id="POL_LogLevel_Help">Specify the logging level.
+
+Values: 
+0 - Off
+1 - Error (Default)
+2 - Debug
+3 - Trace
+</string>
+      <string id="POL_LogFile">Log File</string>
+      <string id="POL_LogFile_Help">Specify the log file location
+
+Example: C:\WINDOWS\System32\LogFiles\passwdhk.log
+</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="PRES_LogLevel">
+        <textBox refId="POL_LogLevel">
+          <label>Set Logging Level</label>
+          <defaultValue>1</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="PRES_LogFile">
+        <textBox refId="POL_LogFile">
+          <label>Set Log File Location</label>
+          <defaultValue>C:\WINDOWS\System32\LogFiles\passwdhk.log</defaultValue>
+        </textBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

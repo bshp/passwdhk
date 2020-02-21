@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--  PasswdHK Template  -->
+<policyDefinitions 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions"
+    schemaVersion="1.0"
+    revision="1.0">
+  <policyNamespaces>
+    <target prefix="passwdhk" namespace="PasswdHK.Policies" />
+    <using prefix="custom" namespace="Custom.Policies"/>
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <supersededAdm fileName="" />
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="CAT_PASSWDHK" displayName="$(string.CAT_PASSWDHK)">
+      <parentCategory ref="custom:CAT_CUSTOM"/>
+    </category>
+    <category name="CAT_PASSWDHK_PRE" displayName="$(string.CAT_PASSWDHK_PRE)">
+      <parentCategory ref="CAT_PASSWDHK" />
+    </category>
+    <category name="CAT_PASSWDHK_POST" displayName="$(string.CAT_PASSWDHK_POST)">
+      <parentCategory ref="CAT_PASSWDHK" />
+    </category>
+    <category name="CAT_PASSWDHK_SYSTEM" displayName="$(string.CAT_PASSWDHK_SYSTEM)">
+      <parentCategory ref="CAT_PASSWDHK" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="POL_LogLevel" class="Machine" displayName="$(string.POL_LogLevel)" explainText="$(string.POL_LogLevel_Help)" presentation="$(presentation.PRES_LogLevel)" key="SYSTEM\CurrentControlSet\Control\Lsa\passwdhk" valueName="loglevel">
+      <parentCategory ref="CAT_PASSWDHK_SYSTEM" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="LogLevel" key="SYSTEM\CurrentControlSet\Control\Lsa\passwdhk" valueName="loglevel" required="true" />
+      </elements>
+    </policy>
+    <policy name="POL_LogFile" class="Machine" displayName="$(string.POL_LogFile)" explainText="$(string.POL_LogFile_Help)" presentation="$(presentation.PRES_LogFile)" key="SYSTEM\CurrentControlSet\Control\Lsa\passwdhk" valueName="logfile">
+      <parentCategory ref="CAT_PASSWDHK_SYSTEM" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="LogFile" key="SYSTEM\CurrentControlSet\Control\Lsa\passwdhk" valueName="logfile" required="true" />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>
