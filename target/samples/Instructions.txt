@@ -1,1 +1,4 @@
-PasswdHK will pass the variables 1 which is the username and 2 as the password. You can basically update any resource you can write a script for, the enclosed are just samples to get an idea.
+PasswdHK will pass two parameters/variables, 1 which is the username and 2 is the new password.  
+  
+You can basically update any resource you can write a script for, see the enclosed samples.  
+  

@@ -7,8 +7,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "passwdhk", "passwdhk-2017.v
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "passwdhk-driver", "src\main\passwdhk-driver\passwdhk-driver-2017.vcxproj", "{029987A5-4837-4F1F-A73C-79B1E8AFDA26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "passwdhk-config", "src\main\passwdhk-config\passwdhk-config.csproj", "{EE3F416E-25AB-4D4E-A957-086F1CC4603A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,18 +47,6 @@ Global
 		{029987A5-4837-4F1F-A73C-79B1E8AFDA26}.Release|Win32.Build.0 = Release|Win32
 		{029987A5-4837-4F1F-A73C-79B1E8AFDA26}.Release|x64.ActiveCfg = Release|x64
 		{029987A5-4837-4F1F-A73C-79B1E8AFDA26}.Release|x64.Build.0 = Release|x64
-		{EE3F416E-25AB-4D4E-A957-086F1CC4603A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EE3F416E-25AB-4D4E-A957-086F1CC4603A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EE3F416E-25AB-4D4E-A957-086F1CC4603A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{EE3F416E-25AB-4D4E-A957-086F1CC4603A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{EE3F416E-25AB-4D4E-A957-086F1CC4603A}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{EE3F416E-25AB-4D4E-A957-086F1CC4603A}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{EE3F416E-25AB-4D4E-A957-086F1CC4603A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EE3F416E-25AB-4D4E-A957-086F1CC4603A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EE3F416E-25AB-4D4E-A957-086F1CC4603A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{EE3F416E-25AB-4D4E-A957-086F1CC4603A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{EE3F416E-25AB-4D4E-A957-086F1CC4603A}.Release|Win32.ActiveCfg = Release|Any CPU
-		{EE3F416E-25AB-4D4E-A957-086F1CC4603A}.Release|x64.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
