@@ -25,7 +25,7 @@ If you get any errors/or warnings and you reboot your domain controller you coul
   
 ## Installation  
 ===============  
-[Installation Guide](src/resources/Installation_Guide_v1.3.pdf)  
+[Installation Guide](src/resources/Installation_Guide_v1.3.1.pdf)  
   
 If the link is not working, it is located under /src/resources    
 
