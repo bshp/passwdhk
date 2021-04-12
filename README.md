@@ -1,5 +1,9 @@
 # Password Filter for Active Directory
 
+## Important
+This repository is not maintained by the original publishers of PasswdHK here, https://sourceforge.net/projects/passwdhk , do not report issues with the dll here to PasswdHk on Sourceforge
+
+## About
 This is a generic password filter for Active Directory that will run the program you specify before and/or after a password change is made. It can be a web service, script and/or even update a sql database.  
   
 Included are (2) Powershell Scripts, they are configured to use HaveIBeenPwned API services and Dictionary Wordlist matching using NIST blacklists.  
